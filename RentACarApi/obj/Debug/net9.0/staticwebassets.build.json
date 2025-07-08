@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "1oybfiWZGIgc5iklfUuGjyHB0P+wONVzL/pHFw5vU9M=",
+  "Source": "RentACarApi",
+  "BasePath": "_content/RentACarApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
