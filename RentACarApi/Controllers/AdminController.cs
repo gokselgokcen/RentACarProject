@@ -11,7 +11,7 @@ namespace RentACarApi.Controllers
         [HttpGet("secret")]
         public IActionResult AdminOnlyData()
         {
-            return Ok("🔐 Sadece adminler görebilir.");
+            return Ok(" Sadece adminler görebilir.");
         }
     }
 }

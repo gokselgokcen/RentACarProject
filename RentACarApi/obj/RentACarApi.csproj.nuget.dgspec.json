@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gokse\\Desktop\\RentACar\\RentACarApi\\RentACarApi.csproj": {}
+    "C:\\Users\\gokse\\Desktop\\GithubCV\\RentACarProject\\RentACarApi\\RentACarApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gokse\\Desktop\\RentACar\\RentACarApi\\RentACarApi.csproj": {
+    "C:\\Users\\gokse\\Desktop\\GithubCV\\RentACarProject\\RentACarApi\\RentACarApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gokse\\Desktop\\RentACar\\RentACarApi\\RentACarApi.csproj",
+        "projectUniqueName": "C:\\Users\\gokse\\Desktop\\GithubCV\\RentACarProject\\RentACarApi\\RentACarApi.csproj",
         "projectName": "RentACarApi",
-        "projectPath": "C:\\Users\\gokse\\Desktop\\RentACar\\RentACarApi\\RentACarApi.csproj",
+        "projectPath": "C:\\Users\\gokse\\Desktop\\GithubCV\\RentACarProject\\RentACarApi\\RentACarApi.csproj",
         "packagesPath": "C:\\Users\\gokse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gokse\\Desktop\\RentACar\\RentACarApi\\obj\\",
+        "outputPath": "C:\\Users\\gokse\\Desktop\\GithubCV\\RentACarProject\\RentACarApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

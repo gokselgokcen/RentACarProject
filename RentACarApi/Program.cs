@@ -86,6 +86,27 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.Use(async (context, next) =>
+{
+    var startTime = DateTime.Now;
+    await next.Invoke();
+    var duration = DateTime.Now - startTime;
+    Console.WriteLine($"Request took {duration.TotalMilliseconds} ms");//4
+});
+
+
+
+
+app.Use(async (context, next) =>
+{
+    //code before the next middleware
+    Console.WriteLine(context.Request.Path);//2
+    await next.Invoke();
+    Console.WriteLine(context.Response.StatusCode);//3
+
+
+    //code after the next middleware
+});
 app.UseCors("AllowReactApp");
 
 app.UseAuthentication();
