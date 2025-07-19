@@ -1,8 +1,10 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentACarApi", "RentACarApi.csproj", "{0364F9A2-703E-9E92-2287-56C6548FE47D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManagementAPI", "..\..\..\coursera c#\UserManagementAPI\UserManagementAPI.csproj", "{95954B3F-2600-4BF8-B4F0-94F8C92724CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +16,10 @@ Global
 		{0364F9A2-703E-9E92-2287-56C6548FE47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0364F9A2-703E-9E92-2287-56C6548FE47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0364F9A2-703E-9E92-2287-56C6548FE47D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95954B3F-2600-4BF8-B4F0-94F8C92724CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95954B3F-2600-4BF8-B4F0-94F8C92724CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95954B3F-2600-4BF8-B4F0-94F8C92724CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95954B3F-2600-4BF8-B4F0-94F8C92724CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
