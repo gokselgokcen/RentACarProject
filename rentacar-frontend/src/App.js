@@ -15,6 +15,7 @@ function App() {
     !!localStorage.getItem("token")
   );
   const [userRole, setUserRole] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -29,8 +30,10 @@ function App() {
       } catch {
         setIsLoggedIn(false);
         setUserRole("");
+        localStorage.removeItem("token");
       }
     }
+    setIsLoading(false);
   }, [isLoggedIn]);
 
   const handleLogout = () => {
@@ -39,74 +42,103 @@ function App() {
     setUserRole("");
   };
 
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleRegisterSuccess = () => {
+    setIsLoggedIn(true);
+  };
+
+  // Loading screen
+  if (isLoading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100">
+        <div className="text-center">
+          <div className="loading-spinner mx-auto mb-3"></div>
+          <h3 className="text-gradient fw-bold">Rent a Car</h3>
+          <p className="text-muted">Yükleniyor...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/login"
-          element={
-            isLoggedIn ? (
-              <Navigate
-                to={userRole === "Admin" ? "/admin" : "/"}
-                replace
-              />
-            ) : (
-              <LoginForm onLoginSuccess={() => setIsLoggedIn(true)} />
-            )
-          }
-        />
-
-        <Route
-          path="/register"
-          element={
-            isLoggedIn ? (
-              <Navigate to="/" replace />
-            ) : (
-              <RegisterForm onRegisterSuccess={() => setIsLoggedIn(true)} />
-            )
-          }
-        />
-
-        <Route
-          path="/admin"
-          element={
-            isLoggedIn && userRole === "Admin" ? (
-              <AdminPanel onLogout={handleLogout} />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          }
-        />
-
-        <Route
-          path="/"
-          element={
-            isLoggedIn ? (
-              userRole === "Admin" ? (
-                <Navigate to="/admin" replace />
+      <div className="app-container">
+        <Routes>
+          <Route
+            path="/login"
+            element={
+              isLoggedIn ? (
+                <Navigate
+                  to={userRole === "Admin" ? "/admin" : "/"}
+                  replace
+                />
               ) : (
-                <Dashboard onLogout={handleLogout} />
+                <LoginForm 
+                  onLoginSuccess={handleLoginSuccess}
+                  switchToRegister={() => window.location.href = '/register'}
+                />
               )
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          }
-        />
+            }
+          />
 
-        <Route
-          path="*"
-          element={
-            isLoggedIn ? (
-              <Navigate
-                to={userRole === "Admin" ? "/admin" : "/"}
-                replace
-              />
-            ) : (
-              <Navigate to="/login" replace />
-            )
-          }
-        />
-      </Routes>
+          <Route
+            path="/register"
+            element={
+              isLoggedIn ? (
+                <Navigate to="/" replace />
+              ) : (
+                <RegisterForm 
+                  onRegisterSuccess={handleRegisterSuccess}
+                  switchToLogin={() => window.location.href = '/login'}
+                />
+              )
+            }
+          />
+
+          <Route
+            path="/admin"
+            element={
+              isLoggedIn && userRole === "Admin" ? (
+                <AdminPanel onLogout={handleLogout} />
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
+
+          <Route
+            path="/"
+            element={
+              isLoggedIn ? (
+                userRole === "Admin" ? (
+                  <Navigate to="/admin" replace />
+                ) : (
+                  <Dashboard onLogout={handleLogout} />
+                )
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
+
+          <Route
+            path="*"
+            element={
+              isLoggedIn ? (
+                <Navigate
+                  to={userRole === "Admin" ? "/admin" : "/"}
+                  replace
+                />
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
